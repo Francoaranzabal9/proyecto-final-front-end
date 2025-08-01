@@ -1,5 +1,7 @@
 import { Layout } from "../components/Layout"
 import { useState } from "react"
+import { useAuth } from "../context/UserContext"
+import { useNavigate } from "react-router-dom"
 
 
 
@@ -8,14 +10,22 @@ const Login = () => {
 
   const [password, setPassword] = useState("")
   const [username, setUsername] = useState("")
+  const { login } = useAuth()
 
+  const navigate = useNavigate()
 
-  const handleLogin = (e) => {
+  const handleLogin = async (e) => {
     e.preventDefault()
     console.log("usuario logeado")
+    const isLogin = await login(username, password)
 
-    setUsername("")
-    setPassword("")
+    if (isLogin) {
+      setUsername("")
+      setPassword("")
+      navigate("/")
+    }
+
+
   }
 
 
