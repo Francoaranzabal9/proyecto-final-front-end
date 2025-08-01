@@ -35,6 +35,8 @@ const Register = () => {
       email
     }
 
+    console.log(newUser)
+
 
     setSuccess("El usuario ha sido registrado con exito.")
 
