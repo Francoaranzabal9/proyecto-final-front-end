@@ -1,9 +1,26 @@
 import { Layout } from '../components/Layout'
-
+import { useEffect, useState } from 'react'
 
 
 
 const Home = () => {
+
+  const [products, setProducts] = useState([])
+
+
+
+
+
+
+
+  const fetchingProducts = async () => {
+    const response = await fetch("https://fakestoreapi.com/products")
+    const data = await response.json()
+    setProducts(data)
+  }
+
+  useEffect(() => { fetchingProducts(), [] })
+
   return (
     <Layout>
       <section>
@@ -15,6 +32,18 @@ const Home = () => {
           Nos apasiona ofrecerte lo mejor para que tu experiencia de compra sea rápida,
           sencilla y segura. ¡Descubrí todo lo que tenemos para vos!
         </p>
+        <div>
+          {
+            products.map((product) => <div key={product.id}>
+              <h2 key={product.id}>{product.title}</h2>
+              <img src={product.image} alt={`Imagen de ${product.title}`} />
+              <p>${product.price}</p>
+              <p>{product.description}</p>
+              <p><strong>{product.category}</strong></p>
+
+            </div>)
+          }
+        </div>
       </section>
     </Layout>
   )
