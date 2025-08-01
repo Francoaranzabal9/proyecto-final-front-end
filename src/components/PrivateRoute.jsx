@@ -3,10 +3,12 @@ import { useAuth } from "../context/UserContext"
 
 
 const PrivateRoute = ({ children }) => {
-  const user = useAuth()
+
+
+  const { user } = useAuth()
 
   if (!user) {
-    return <Navigate to="/login" replace />
+    return <Navigate to="/Login" replace />
   }
   return children
 }
