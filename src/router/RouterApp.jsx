@@ -1,4 +1,4 @@
-import { Router, Routes, Route } from "react-router-dom"
+import { BrowserRouter, Routes, Route } from "react-router-dom"
 import { Dashboard } from "../views/Dashboard"
 import { Home } from "../views/Home"
 import { Login } from "../views/Login"
@@ -9,7 +9,7 @@ import { NotFound } from "../views/NotFound"
 
 const RouterApp = () => {
   return (
-    <Router>
+    <BrowserRouter>
       <Routes>
         <Route path="/Home" element={<Home />} />
         <Route path="/Dashboard" element={<Dashboard />} />
@@ -17,7 +17,7 @@ const RouterApp = () => {
         <Route path="/Register" element={<Register />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
-    </Router>
+    </BrowserRouter>
   )
 }
 
