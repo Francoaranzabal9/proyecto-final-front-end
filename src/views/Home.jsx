@@ -14,6 +14,7 @@ const Home = () => {
   const [descriptionEdit, setDescriptionEdit] = useState("")
   const [categoryEdit, setCategoryEdit] = useState("")
   const [imageEdit, setImageEdit] = useState("")
+  const [search, setSearch] = useState("")
 
 
   const { user } = useAuth()
@@ -76,6 +77,13 @@ const Home = () => {
     if (response.ok) {
       setProducts(prevProduct => prevProduct.filter((product) => product.id != id))
     }
+
+
+  }
+  //Funcion para controlar el input de busqueda
+  const handleSearch = (e) => {
+    const value = e.target.value
+    setSearch(value)
   }
 
 
@@ -92,6 +100,12 @@ const Home = () => {
           Nos apasiona ofrecerte lo mejor para que tu experiencia de compra sea rápida,
           sencilla y segura. ¡Descubrí todo lo que tenemos para vos!
         </p>
+        <input
+          type="text"
+          placeholder='Buscar producto...'
+          value={search}
+          onChange={handleSearch}
+        />
         <div>
           {
             showPopup && <section>
@@ -134,19 +148,22 @@ const Home = () => {
             </section>
           }
           {
-            products.map((product) => <div key={product.id}>
-              <h2 key={product.id}>{product.title}</h2>
-              <img src={product.image} alt={`Imagen de ${product.title}`} />
-              <p>${product.price}</p>
-              <p>{product.description}</p>
-              <p><strong>{product.category}</strong></p>
-              {
-                user && <div>
-                  <button onClick={() => handleOpenEdit(product)}>Actualizar</button>
-                  <button onClick={() => handleDelete(product.id)}>Borrar</button>
-                </div>
-              }
-            </div>)
+            products
+              .filter((product) => product.title.toLowerCase()
+                .includes(search.toLowerCase()))
+              .map((product) => <div key={product.id}>
+                <h2 key={product.id}>{product.title}</h2>
+                <img src={product.image} alt={`Imagen de ${product.title}`} />
+                <p>${product.price}</p>
+                <p>{product.description}</p>
+                <p><strong>{product.category}</strong></p>
+                {
+                  user && <div>
+                    <button onClick={() => handleOpenEdit(product)}>Actualizar</button>
+                    <button onClick={() => handleDelete(product.id)}>Borrar</button>
+                  </div>
+                }
+              </div>)
 
           }
         </div>
