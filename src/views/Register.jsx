@@ -1,5 +1,7 @@
 import { Layout } from "../components/Layout"
 import { useState } from "react"
+import { useAuth } from "../context/UserContext"
+import { useNavigate } from "react-router-dom"
 
 
 
@@ -11,13 +13,23 @@ const Register = () => {
   const [email, setEmail] = useState("")
   const [error, setError] = useState("")
   const [success, setSuccess] = useState("")
+  const { register } = useAuth()
 
+  const navigate = useNavigate()
 
-
-  const handleRegister = (e) => {
+  const handleRegister = async (e) => {
     e.preventDefault()
     setError("")
     setSuccess("")
+
+    const newUser = {
+      id: Math.floor(Math.random() * 10),
+      username: username,
+      password: password,
+      email: email
+    }
+
+    const isRegister = await register(newUser)
 
     if (!username || !email || !password) {
       setError("Debes completar todos los campos.")
@@ -29,20 +41,14 @@ const Register = () => {
       return
     }
 
-    const newUser = {
-      username,
-      password,
-      email
-    }
-
     console.log(newUser)
 
-
-    setSuccess("El usuario ha sido registrado con exito.")
-
-    setUsername("")
-    setPassword("")
-    setEmail("")
+    if (isRegister) {
+      setUsername("")
+      setPassword("")
+      setEmail("")
+      navigate("/Login")
+    }
 
   }
 

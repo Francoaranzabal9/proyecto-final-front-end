@@ -154,7 +154,7 @@ const Home = () => {
               .map((product) => <div key={product.id}>
                 <h2 key={product.id}>{product.title}</h2>
                 <img src={product.image} alt={`Imagen de ${product.title}`} />
-                <p>${product.price}</p>
+                <p>{`$ ${product.price}`}</p>
                 <p>{product.description}</p>
                 <p><strong>{product.category}</strong></p>
                 {
