@@ -1,12 +1,13 @@
-# React + Vite
+# 🛒 Tienda Virtual
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 📌 Objetivo General
+El objetivo de este proyecto es desarrollar una tienda virtual que permita a los usuarios registrarse, iniciar sesión y acceder a un panel de administración (dashboard) donde podrán gestionar productos.  
+Además, se asegura la protección de rutas mediante autenticación, permitiendo que solo usuarios logueados accedan a secciones privadas.
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## ⚙️ Funcionalidades Implementadas
+- **Registro de usuarios**: creación de nuevas cuentas con validaciones básicas.  
+- **Login de usuarios**: acceso al sistema mediante credenciales.  
+- **Autenticación y rutas privadas**: solo los usuarios logueados pueden acceder al dashboard.  
+- **Dashboard de productos**: sección privada para registrar y gestionar productos.  
+- **Vista pública de la tienda**: página inicial con la presentación de la tienda.  
+- **Manejo de estados globales** con React Context (o similar). 
