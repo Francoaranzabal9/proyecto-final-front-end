@@ -10,6 +10,8 @@ const Dashboard = () => {
   const [name, setName] = useState("")
   const [description, setDescription] = useState("")
   const [price, setPrice] = useState("")
+  const [category, setCategory] = useState("")
+  const [image, setImage] = useState("")
   const [product, setProduct] = useState("")
   const [error, setError] = useState("")
 
@@ -31,8 +33,8 @@ const Dashboard = () => {
       name: name,
       price: price,
       description: description,
-      category: "",
-      image: ""
+      category: category,
+      image: image
     }
 
     const response = await fetch("https://fakestoreapi.com/products", {
@@ -44,6 +46,8 @@ const Dashboard = () => {
     })
 
     const data = await response.json()
+
+    console.log(data)
 
 
     setProduct(data)
@@ -70,6 +74,15 @@ const Dashboard = () => {
             />
           </div>
           <div>
+            <label >Imagen:</label>
+            <input
+              type="text"
+              placeholder="Ingrese la URL de la imagen"
+              onChange={(e) => setImage(e.target.value)}
+              value={image}
+            />
+          </div>
+          <div>
             <label >Precio:</label>
             <input
               type="text"
@@ -85,6 +98,14 @@ const Dashboard = () => {
               value={description}
             />
           </div>
+          <div>
+            <label >Categoria:</label>
+            <input
+              type="text"
+              onChange={(e) => setCategory(e.target.value)}
+              value={category}
+            />
+          </div>
           <button>Ingresar producto</button>
         </form>
         {
@@ -94,8 +115,10 @@ const Dashboard = () => {
         {
           product && <div>
             <h2>{product.title}</h2>
-            <p>{product.price}</p>
+            <img src={`${product.image}`} alt="Imagen del producto" />
+            <p>{`$ ${product.price}`}</p>
             <p>{product.description}</p>
+            <p>{product.category}</p>
           </div>
         }
       </section>
