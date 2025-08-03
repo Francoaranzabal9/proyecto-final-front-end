@@ -45,16 +45,16 @@ const Dashboard = () => {
       body: JSON.stringify(newProduct)
     })
 
-    const data = await response.json()
 
-    console.log(data)
+    const data = await response.json()
 
 
     setProduct(data)
     setName("")
+    setImage("")
     setPrice("")
     setDescription("")
-
+    setCategory("")
   }
 
   return (

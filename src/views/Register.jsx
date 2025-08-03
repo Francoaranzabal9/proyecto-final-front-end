@@ -23,10 +23,10 @@ const Register = () => {
     setSuccess("")
 
     const newUser = {
-      id: Math.floor(Math.random() * 10),
       username: username,
-      password: password,
-      email: email
+      email: email,
+      password: password
+
     }
 
     const isRegister = await register(newUser)
@@ -47,7 +47,7 @@ const Register = () => {
       setUsername("")
       setPassword("")
       setEmail("")
-      navigate("/Login")
+      navigate("/")
     }
 
   }
