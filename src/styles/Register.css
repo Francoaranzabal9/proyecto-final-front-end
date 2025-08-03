@@ -1,0 +1,113 @@
+* {
+  box-sizing: border-box;
+}
+
+p,
+label {
+  color: white;
+}
+
+.register-card {
+  width: 100%;
+  max-width: 400px;
+}
+
+.form-cont h1 {
+  font-size: 25px;
+  font-weight: 700px;
+  margin-bottom: 10px;
+}
+
+.form-cont p {
+  font-size: 14px;
+  margin-bottom: 25px;
+  opacity: 0.8;
+}
+
+.register-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100dvh;
+  background-image: url('https://images4.alphacoders.com/134/1347180.png');
+  background-size: cover;
+  background-position: center;
+  filter: brightness(0.7);
+  overflow: hidden;
+}
+
+
+.form-cont {
+  backdrop-filter: blur(15px);
+  background: rgba(255, 255, 255, 0.01);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 30px 25px;
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  color: white;
+  animation: aparecer 0.6s ease-out;
+}
+
+.form-cont label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 14px;
+}
+
+.form-cont input {
+  width: 100%;
+  padding: 12px 14px;
+  margin-bottom: 20px;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  outline: none;
+}
+
+.form-cont input::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+
+.register-button {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: none;
+  color: white;
+  background-color: rgba(255, 255, 255, 0.2);
+  cursor: pointer;
+  font-size: 16px;
+  transition: background 0.3s ease;
+}
+
+.register-button button:hover {
+  background-color: rgba(rgba(255, 255, 255, 0.3));
+}
+
+.register-footer {
+  margin-top: 20px;
+  text-align: center;
+  font-weight: 500;
+}
+
+.register-footer a {
+  color: #fff;
+  font-weight: 500;
+}
+
+.register-footer a:hover {
+  opacity: 0.8;
+}
+
+@keyframes aparecer {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

@@ -2,7 +2,9 @@ import { Layout } from "../components/Layout"
 import { useState } from "react"
 import { useAuth } from "../context/UserContext"
 import { useNavigate } from "react-router-dom"
+import { Link } from "react-router-dom"
 
+import "../styles/Register.css"
 
 
 const Register = () => {
@@ -26,7 +28,6 @@ const Register = () => {
       username: username,
       email: email,
       password: password
-
     }
 
     const isRegister = await register(newUser)
@@ -54,32 +55,30 @@ const Register = () => {
 
   return (
     <Layout>
-      <section>
-        <h1>Registrese</h1>
-      </section>
-      <section>
-        <form onSubmit={handleRegister}>
-          <div>
+      <section className="register-section">
+        <div className="register-card">
+          <form className="form-cont" onSubmit={handleRegister}>
+            <h1>Crea un usuario</h1>
+            <p>Descubre todo lo que tenemos para vos</p>
             <label >Nombre de usuario:</label>
             <input type="text"
               onChange={(e) => setUsername(e.target.value)}
               value={username} />
-          </div>
-          <div>
             <label >Correo electronico:</label>
             <input type="email"
               onChange={(e) => setEmail(e.target.value)}
               value={email} />
-          </div>
-          <div>
             <label >Contraseña:</label>
             <input type="password"
               onChange={(e) => setPassword(e.target.value)}
               value={password} />
-          </div>
-          <button>Registrarse</button>
-        </form>
-
+            <button className="register-button">Registrarse</button>
+            <div className="register-footer">
+              <p>Ya tenes una cuenta?</p>
+              <a><Link to="/Login">Inicia Sesion</Link></a>
+            </div>
+          </form>
+        </div>
         {
           error && <p>{error}</p>
         }
