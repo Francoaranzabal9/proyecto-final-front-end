@@ -65,7 +65,7 @@ const Login = () => {
             <button className="login-button">Ingresar</button>
             <div className="login-footer">
               <p>No tenes una cuenta?</p>
-              <a><Link to="/register">Registrate</Link></a>
+              <Link to="/register">Registrate</Link>
             </div>
           </form>
         </div>

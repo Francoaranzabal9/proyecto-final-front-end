@@ -5,6 +5,7 @@ import { Login } from "../views/Login"
 import { Register } from "../views/Register"
 import { NotFound } from "../views/NotFound"
 import { PrivateRoute } from "../components/PrivateRoute"
+import { AboutUs } from "../views/AboutUs"
 
 
 
@@ -16,6 +17,7 @@ const RouterApp = () => {
         <Route path="/Dashboard" element={<PrivateRoute><Dashboard /></PrivateRoute>} />
         <Route path="/Login" element={<Login />} />
         <Route path="/Register" element={<Register />} />
+        <Route path="/AboutUs" element={<AboutUs />}></Route>
         <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>

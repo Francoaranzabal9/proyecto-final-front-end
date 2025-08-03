@@ -19,6 +19,7 @@ const Header = () => {
           user && <div>
             <li><Link to="/">Home</Link></li>
             <li><Link to="/Dashboard">Dashboard</Link></li>
+            <li><Link to="/AboutUs">Sobre Nosotros</Link></li>
             <button onClick={handleLogout}>Cerrar sesion</button>
           </div>
         }
@@ -26,6 +27,7 @@ const Header = () => {
           !user && <div>
             <li><Link to="/Login">Login</Link></li>
             <li><Link to="/Register">Register</Link></li>
+            <li><Link to="/AboutUs">Sobre Nosotros</Link></li>
           </div>
         }
       </ul>
