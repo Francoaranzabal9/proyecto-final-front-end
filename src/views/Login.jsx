@@ -11,22 +11,30 @@ const Login = () => {
 
   const [password, setPassword] = useState("")
   const [username, setUsername] = useState("")
+  const [error, setError] = useState("")
+  const [loginError, setLoginError] = useState("")
   const { login } = useAuth()
 
   const navigate = useNavigate()
 
   const handleLogin = async (e) => {
     e.preventDefault()
-    console.log("usuario logeado")
+    setError("")
+
     const isLogin = await login(username, password)
+
+    if (!username || !password) {
+      setError("Debes completar todos los campos.")
+      return
+    }
 
     if (isLogin) {
       setUsername("")
       setPassword("")
       navigate("/")
+    } else {
+      setLoginError("El nombre de usuario o la contraseña son incorrectos.")
     }
-
-
   }
 
 
@@ -48,6 +56,12 @@ const Login = () => {
               type="password"
               onChange={(e) => setPassword(e.target.value)}
               value={password} />
+            {
+              error && <p className="error">{error}</p>
+            }
+            {
+              loginError && <p className="error">{loginError}</p>
+            }
             <button className="login-button">Ingresar</button>
             <div className="login-footer">
               <p>No tenes una cuenta?</p>
