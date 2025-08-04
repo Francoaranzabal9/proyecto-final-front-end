@@ -1,5 +1,6 @@
 import { Layout } from "../components/Layout"
 import "../styles/aboutus.css"
+import objectiveImg from "../assets/objective.jpg"
 
 const AboutUs = () => {
   return (
@@ -19,10 +20,10 @@ const AboutUs = () => {
 
       <section className="objetive-section">
         <div className="objective-cont">
-          <picture>
-            <img src="" alt="" />
-          </picture>
-          <div className="card">
+          <div className="objective-image">
+            <img src={objectiveImg} alt="Imagen de seccion" />
+          </div>
+          <div className="objective-card">
             <div className="text-cont">
               <h2>A quién está dirigido</h2>
               <p>
@@ -45,19 +46,20 @@ const AboutUs = () => {
           </div>
           <div className="tecnologies">
             <div className="tecnology">
-              <img src="" alt="" />
+              <img src=" https://img.icons8.com/?size=100&id=asWSSTBrDlTW&format=png&color=000000" alt="" />
               <p>React: para la creación de interfaces dinámicas y el manejo del estado.</p>
             </div>
             <div className="tecnology">
-              <img src="" alt="" />
+              <img src="  https://img.icons8.com/?size=100&id=20909&format=png&color=000000" alt="logo de html" />
+              <img src="https://img.icons8.com/?size=100&id=21278&format=png&color=000000" alt="logo de css" />
               <p>HTML y CSS: para la estructura y diseño base de la aplicación.</p>
             </div>
             <div className="tecnology">
-              <img src="" alt="" />
+              <img src="https://img.icons8.com/?size=100&id=108784&format=png&color=000000" alt="logo de javascript" />
               <p>JavaScript: para la lógica de interacción y validaciones.</p>
             </div>
             <div className="tecnology">
-              <img src="" alt="" />
+              <img src="https://git-scm.com/images/logos/downloads/Git-Icon-1788C.svg" alt="logo de react" />
               <p>Git: para el control de versiones y la colaboración en el desarrollo.</p>
             </div>
           </div>
