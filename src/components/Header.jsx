@@ -12,27 +12,48 @@ const Header = () => {
 
 
   return (
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <div class="container-fluid">
+        <Link class="navbar-brand" to="/"><img src="https://idaliadigital.com/wp-content/uploads/2023/02/tiendas-online-profesionales.png" alt="Logo de la tienda" /></Link>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            {
+              user && <>
+                <li class="nav-item">
+                  <Link class="nav-link active" aria-current="page" to="/">Inicio</Link>
+                </li>
+                <li class="nav-item">
+                  <Link class="nav-link" to="/Dashboard">Dashboard</Link>
+                </li>
+                <li class="nav-item">
+                  <Link class="nav-link" to="/AboutUs" >Sobre nosotros</Link>
+                </li>
+                <button onClick={handleLogout}>Cerrar sesion</button>
+              </>
+            }
+            {
+              !user && <>
+                <li class="nav-item">
+                  <Link class="nav-link active" aria-current="page" to="/">Inicio</Link>
+                </li>
+                <li class="nav-item">
+                  <Link class="nav-link" to="/Login">Iniciar sesion</Link>
+                </li>
+                <li class="nav-item">
+                  <Link class="nav-link" to="/Register">Sobre nosotros</Link>
+                </li>
+                <li class="nav-item">
+                  <Link class="nav-link" to="/AboutUs" >Sobre nosotros</Link>
+                </li>
+              </>
+            }
 
-    <nav>
-      {<img src="https://idaliadigital.com/wp-content/uploads/2023/02/tiendas-online-profesionales.png" alt="Logo de la tienda" />}
-      <ul>
-        {
-          user && <div>
-            <li><Link to="/">Inicio</Link></li>
-            <li><Link to="/Dashboard">Dashboard</Link></li>
-            <li><Link to="/AboutUs">Sobre Nosotros</Link></li>
-            <button onClick={handleLogout}>Cerrar sesion</button>
-          </div>
-        }
-        {
-          !user && <div>
-            <li><Link to="/">Inicio</Link></li>
-            <li><Link to="/Login">Iniciar sesion</Link></li>
-            <li><Link to="/Register">Registrarse</Link></li>
-            <li><Link to="/AboutUs">Sobre Nosotros</Link></li>
-          </div>
-        }
-      </ul>
+          </ul>
+        </div>
+      </div>
     </nav>
   )
 }
