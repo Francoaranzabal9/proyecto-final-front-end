@@ -2,7 +2,7 @@ import { Layout } from '../components/Layout'
 import { useEffect, useState } from 'react'
 import { useAuth } from '../context/UserContext'
 
-
+import "../styles/home.css"
 
 const Home = () => {
 
@@ -15,6 +15,7 @@ const Home = () => {
   const [categoryEdit, setCategoryEdit] = useState("")
   const [imageEdit, setImageEdit] = useState("")
   const [search, setSearch] = useState("")
+  const [placeholder, setPlaceholder] = useState(true)
 
 
   const { user } = useAuth()
@@ -92,20 +93,29 @@ const Home = () => {
   return (
     <Layout>
       <section>
-        <h1>Bienvenido a Tu Tienda Virtual</h1>
-        <p>Los mejores productos al mejor precio, ¡directo a tu casa!</p>
-        <h2>¿Por qué elegirnos?</h2>
-        <p>
-          En nuestra tienda encontrarás calidad, confianza y precios increíbles.
-          Nos apasiona ofrecerte lo mejor para que tu experiencia de compra sea rápida,
-          sencilla y segura. ¡Descubrí todo lo que tenemos para vos!
-        </p>
-        <input
-          type="text"
-          placeholder='Buscar producto...'
-          value={search}
-          onChange={handleSearch}
-        />
+        <div className='home-card'>
+          <h1>Bienvenido a Tu Tienda Virtual</h1>
+          <p>Los mejores productos al mejor precio, ¡directo a tu casa!</p>
+          <h2>¿Por qué elegirnos?</h2>
+          <div className="why-us">
+            <div className='why-cont'>
+              <p>En nuestra tienda encontrarás calidad, confianza y precios increíbles.</p>
+            </div>
+            <div className='why-cont'>
+              <p>Nos apasiona ofrecerte lo mejor para que tu experiencia de compra sea rápida,
+                sencilla y segura.</p>
+            </div>
+            <div className='why-cont'>
+              <p>¡Descubrí todo lo que tenemos para vos!</p>
+            </div>
+          </div>
+          <input
+            type="text"
+            placeholder="Buscar un producto"
+            value={search}
+            onChange={handleSearch}
+          />
+        </div>
         <div>
           {
             showPopup && <section>
@@ -147,25 +157,35 @@ const Home = () => {
 
             </section>
           }
-          {
-            products
-              .filter((product) => product.title.toLowerCase()
-                .includes(search.toLowerCase()))
-              .map((product) => <div key={product.id}>
-                <h2 key={product.id}>{product.title}</h2>
-                <img src={product.image} alt={`Imagen de ${product.title}`} />
-                <p>{`$ ${product.price}`}</p>
-                <p>{product.description}</p>
-                <p><strong>{product.category}</strong></p>
-                {
-                  user && <div>
-                    <button onClick={() => handleOpenEdit(product)}>Actualizar</button>
-                    <button onClick={() => handleDelete(product.id)}>Borrar</button>
-                  </div>
-                }
-              </div>)
+          <div className='products-grid'>
+            {(() => {
+              const filteredProducts = products.filter((product) =>
+                product.title.toLowerCase().includes(search.toLowerCase())
+              );
 
-          }
+              if (filteredProducts.length === 0) {
+                return <p className="no-products">No se encontraron productos</p>;
+              }
+
+              return filteredProducts.map((product) => (
+                <div className="product-card" key={product.id}>
+                  <div className="img-cont">
+                    <img src={product.image} alt={`Imagen de ${product.title}`} />
+                  </div>
+                  <h2>{product.title}</h2>
+                  <p><strong className='detail'>{product.category}</strong></p>
+                  <p>{product.description}</p>
+                  <p><strong className='detail'>{`$ ${product.price}`}</strong></p>
+                  {user && (
+                    <div className='update-buttons'>
+                      <button onClick={() => handleOpenEdit(product)}>Actualizar</button>
+                      <button className='delete-button' onClick={() => handleDelete(product.id)}>Borrar</button>
+                    </div>
+                  )}
+                </div>
+              ));
+            })()}
+          </div>
         </div>
       </section>
     </Layout>
