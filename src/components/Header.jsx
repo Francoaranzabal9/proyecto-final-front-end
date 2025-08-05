@@ -12,12 +12,13 @@ const Header = () => {
 
 
   return (
+
     <nav>
-      {/* <img src="" alt="Logo de la tienda" /> */}
+      {<img src="https://idaliadigital.com/wp-content/uploads/2023/02/tiendas-online-profesionales.png" alt="Logo de la tienda" />}
       <ul>
         {
           user && <div>
-            <li><Link to="/">Home</Link></li>
+            <li><Link to="/">Inicio</Link></li>
             <li><Link to="/Dashboard">Dashboard</Link></li>
             <li><Link to="/AboutUs">Sobre Nosotros</Link></li>
             <button onClick={handleLogout}>Cerrar sesion</button>
@@ -25,8 +26,9 @@ const Header = () => {
         }
         {
           !user && <div>
-            <li><Link to="/Login">Login</Link></li>
-            <li><Link to="/Register">Register</Link></li>
+            <li><Link to="/">Inicio</Link></li>
+            <li><Link to="/Login">Iniciar sesion</Link></li>
+            <li><Link to="/Register">Registrarse</Link></li>
             <li><Link to="/AboutUs">Sobre Nosotros</Link></li>
           </div>
         }
