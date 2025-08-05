@@ -67,6 +67,84 @@ p {
   z-index: 1;
 }
 
+.pop-up {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.update-form {
+  backdrop-filter: blur(15px);
+  background: rgba(255, 255, 255, 0.01);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 30px 25px;
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  color: white;
+  animation: aparecer 0.6s ease-out;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  height: 600px;
+  width: auto;
+}
+
+.update-form form {
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.update-form input {
+  width: 100%;
+  padding: 12px 14px;
+  margin-bottom: 20px;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  outline: none;
+}
+
+.update-form textarea {
+  width: 100%;
+  padding: 12px 14px;
+  margin-bottom: 20px;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  outline: none;
+  resize: none;
+  overflow: hidden;
+}
+
+.update-form form button {
+  padding: 12px;
+  border-radius: 8px;
+  border: none;
+  color: white;
+  background-color: rgba(255, 255, 255, 0.2);
+  cursor: pointer;
+  font-size: 16px;
+  transition: background 0.3s ease;
+  width: 100%;
+}
+
+.update-form button {
+  padding: 12px;
+  border-radius: 8px;
+  border: none;
+  color: white;
+  background-color: rgba(255, 4, 4, 0.377);
+  cursor: pointer;
+  font-size: 16px;
+  transition: background 0.3s ease;
+  width: 50%;
+}
+
+
+
 .products-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));

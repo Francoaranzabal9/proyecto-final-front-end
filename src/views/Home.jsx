@@ -118,42 +118,46 @@ const Home = () => {
         </div>
         <div>
           {
-            showPopup && <section>
-              <h2>Editando producto.</h2>
-              <form onSubmit={handleUpdate}>
-                <input
-                  type="text"
-                  placeholder='Ingrese el nombre del producto'
-                  value={titleEdit}
-                  onChange={(e) => setTitleEdit(e.target.value)}
-                />
-                <input
-                  type="text"
-                  placeholder=''
-                  value={priceEdit}
-                  onChange={(e) => setPriceEdit(e.target.value)}
-                />
-                <textarea
-                  placeholder='ingrese la descripcion del producto'
-                  value={descriptionEdit}
-                  onChange={(e) => setDescriptionEdit(e.target.value)}
-                />
-                <input
-                  type="text"
-                  placeholder='Ingrese la categoria del producto'
-                  value={categoryEdit}
-                  onChange={(e) => setCategoryEdit(e.target.value)}
-                />
-                <input
-                  type="text"
-                  placeholder='Ingrese la URL de la imagen'
-                  value={imageEdit}
-                  onChange={(e) => setImageEdit(e.target.value)}
-                />
-                <button>Actualizar</button>
-              </form>
+            showPopup && <section className='pop-up'>
+              <div className="pop-up-overlay">
+                <div className="update-form">
+                  <h2>Editando producto.</h2>
+                  <form onSubmit={handleUpdate}>
+                    <input
+                      type="text"
+                      placeholder='Ingrese el nombre del producto'
+                      value={titleEdit}
+                      onChange={(e) => setTitleEdit(e.target.value)}
+                    />
+                    <input
+                      type="text"
+                      placeholder=''
+                      value={priceEdit}
+                      onChange={(e) => setPriceEdit(e.target.value)}
+                    />
+                    <textarea
+                      placeholder='ingrese la descripcion del producto'
+                      value={descriptionEdit}
+                      onChange={(e) => setDescriptionEdit(e.target.value)}
+                    />
+                    <input
+                      type="text"
+                      placeholder='Ingrese la categoria del producto'
+                      value={categoryEdit}
+                      onChange={(e) => setCategoryEdit(e.target.value)}
+                    />
+                    <input
+                      type="text"
+                      placeholder='Ingrese la URL de la imagen'
+                      value={imageEdit}
+                      onChange={(e) => setImageEdit(e.target.value)}
+                    />
+                    <button>Actualizar</button>
+                  </form>
 
-              <button onClick={() => setShowPopUp(null)}>Cerrar</button>
+                  <button onClick={() => setShowPopUp(null)}>Cerrar</button>
+                </div>
+              </div>
 
             </section>
           }
@@ -164,7 +168,9 @@ const Home = () => {
               );
 
               if (filteredProducts.length === 0) {
-                return <p className="no-products">No se encontraron productos</p>;
+                return <div className="product-card">
+                  <p className="no-products">No se encontraron productos</p>
+                </div>;
               }
 
               return filteredProducts.map((product) => (
