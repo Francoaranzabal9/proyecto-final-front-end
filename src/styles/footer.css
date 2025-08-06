@@ -1,0 +1,32 @@
+.footer-cont {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.footer-cont a {
+  color: white;
+  font-weight: bold;
+}
+
+.footer-cont a:hover {
+  color: #d0276d;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: space-around;
+  width: 50%;
+  border-top: solid 1px white;
+  padding: 20px;
+}
+
+.footer-links img {
+  height: 50px;
+  width: auto;
+}
+
+.footer-links img:hover {
+  scale: 1.1;
+}
