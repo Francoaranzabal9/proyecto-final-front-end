@@ -1,0 +1,17 @@
+.navbar-nav li {
+  margin-right: 10px;
+}
+
+.navbar-nav button {
+  padding: 5px;
+  border-radius: 8px;
+  border: none;
+  color: white;
+  background-color: #1f2a43;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+.navbar-nav button:hover {
+  background-color: #d0276d;
+}

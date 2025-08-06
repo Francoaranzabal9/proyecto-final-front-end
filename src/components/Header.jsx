@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom"
 import { useAuth } from "../context/UserContext"
 
+import "../styles/header.css"
+
 
 
 const Header = () => {
@@ -43,7 +45,7 @@ const Header = () => {
                   <Link class="nav-link" to="/Login">Iniciar sesion</Link>
                 </li>
                 <li class="nav-item">
-                  <Link class="nav-link" to="/Register">Sobre nosotros</Link>
+                  <Link class="nav-link" to="/Register">Registrarse</Link>
                 </li>
                 <li class="nav-item">
                   <Link class="nav-link" to="/AboutUs" >Sobre nosotros</Link>
