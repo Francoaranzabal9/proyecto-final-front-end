@@ -115,15 +115,15 @@
 }
 
 .tec-text-cont {
-  padding: 20px;
+  padding: 10px;
 }
 
 .tec-text-cont h2 {
-  font-size: 30px
+  font-size: 25px
 }
 
 .tec-text-cont p {
-  font-size: 25px;
+  font-size: 20px;
   opacity: 0.8;
 }
 
@@ -133,9 +133,18 @@
   gap: 10px;
 }
 
+.tecnology p {
+  font-size: 15px;
+}
+
 @media (max-width:1296px) {
   .objective-card {
     width: 300px;
+  }
+
+
+  .tecnologies {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   }
 
   .text-cont h2 {
@@ -161,12 +170,20 @@
   .tec-text-cont p {
     font-size: 15px;
   }
+
+  .tecnology p {
+    font-size: 13px;
+  }
 }
 
 
 @media (max-width:880px) {
   .objective-image img {
-    height: 200px;
+    height: 150px;
+  }
+
+  .tecnologies {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
   }
 
   .objective-card {
@@ -186,18 +203,18 @@
   }
 
   .tec-text-cont h2 {
-    font-size: 20px
+    font-size: 15px
   }
 
   .tec-text-cont p {
-    font-size: 15px;
+    font-size: 10px;
   }
 
   .tecnology img {
-    width: 40px;
+    width: 30px;
   }
 
   .tecnology p {
-    font-size: 14px;
+    font-size: 10px;
   }
 }

@@ -109,14 +109,16 @@ const Home = () => {
               <p>¡Descubrí todo lo que tenemos para vos!</p>
             </div>
           </div>
-          <input
-            type="text"
-            placeholder="Buscar un producto"
-            value={search}
-            onChange={handleSearch}
-          />
         </div>
-        <div>
+        <div className='products-overlay'>
+          <div className="search-input">
+            <input
+              type="text"
+              placeholder="Buscar un producto"
+              value={search}
+              onChange={handleSearch}
+            />
+          </div>
           {
             showPopup && <section className='pop-up'>
               <div className="pop-up-overlay">

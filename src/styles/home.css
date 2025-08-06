@@ -2,11 +2,6 @@ section {
   background-color: #1f2a43;
 }
 
-p {
-  font-size: 20px;
-}
-
-
 .why-us {
   display: flex;
   align-items: center;
@@ -55,16 +50,21 @@ p {
   font-size: 25px;
 }
 
+.products-overlay {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
 
-.home-card input {
+.search-input input {
   width: 400px;
   padding: 12px 14px;
-  margin-bottom: 20px;
   border: none;
   border-radius: 8px;
   font-size: 14px;
   outline: none;
-  z-index: 1;
+  margin-top: 40px;
 }
 
 .pop-up {
@@ -89,6 +89,7 @@ p {
   flex-direction: column;
   height: 600px;
   width: auto;
+  margin-top: 10px;
 }
 
 .update-form form {
@@ -245,19 +246,43 @@ p {
 }
 
 @media(max-width: 511px) {
-  .why-us {
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    width: 100%;
+  .why-cont p {
+    font-size: 13px;
   }
+
+  .home-card h1 {
+    font-size: 25px;
+  }
+
+  .home-card p {
+    font: 15px;
+  }
+
+  .home-card h2 {
+    font-size: 20px;
+  }
+
+  .products-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+
+  .search-input input {
+    width: 200px;
+    font-size: 14px;
+  }
+
 }
 
-@media(max-width: 450px) {
-  .products-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 10px;
-    padding: 50px;
+@media(max-width: 480px) {
+  .why-cont p {
+    font-size: 9px;
+  }
+
+  .product-card h2 {
+    font-size: 15px;
+  }
+
+  .product-card p {
+    font-size: 10px;
   }
 }
