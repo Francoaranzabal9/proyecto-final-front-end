@@ -44,15 +44,13 @@ const Register = () => {
       return
     }
 
-    console.log(newUser)
-
     if (isRegister) {
       setUsername("")
       setPassword("")
       setEmail("")
       navigate("/")
+      alert("El usuario ha sido regristrado con exito.");
     }
-
   }
 
   return (
@@ -61,7 +59,7 @@ const Register = () => {
         <div className="register-card">
           <form className="form-cont" onSubmit={handleRegister}>
             <h1>Crea un usuario</h1>
-            <p>Descubre todo lo que tenemos para vos</p>
+            <p>Descubrí todo lo que tenemos para vos</p>
             <label >Nombre de usuario:</label>
             <input
               type="text"
@@ -70,7 +68,7 @@ const Register = () => {
             {
               lengthError && <p className="error"> {lengthError}</p>
             }
-            <label >Correo electronico:</label>
+            <label >Correo electrónico:</label>
             <input
               type="email"
               onChange={(e) => setEmail(e.target.value)}
@@ -84,8 +82,8 @@ const Register = () => {
             }
             <button className="register-button">Registrarse</button>
             <div className="register-footer">
-              <p>Ya tenes una cuenta?</p>
-              <Link to="/Login">Inicia Sesion</Link>
+              <p>Ya tenés una cuenta?</p>
+              <Link to="/Login">Inicia Sesión</Link>
             </div>
           </form>
         </div>

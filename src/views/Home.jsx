@@ -170,7 +170,7 @@ const Home = () => {
               );
 
               if (filteredProducts.length === 0) {
-                return <div className="product-card">
+                return <div className="no-products-cont">
                   <p className="no-products">No se encontraron productos</p>
                 </div>;
               }

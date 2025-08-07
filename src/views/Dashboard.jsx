@@ -71,7 +71,7 @@ const Dashboard = () => {
   return (
     <Layout>
       <section className="form-section">
-        <h1>Panel de administracion</h1>
+        <h1>Panel de administración</h1>
         <div className="dashboard-form-cont">
           <h2>Agregar un nuevo producto</h2>
           <form onSubmit={handleNewProduct}>
@@ -103,7 +103,7 @@ const Dashboard = () => {
               />
             </div>
             <div>
-              <label >Descripcion:</label>
+              <label >Descripción:</label>
               <input
                 type="text"
                 onChange={(e) => setDescription(e.target.value)}

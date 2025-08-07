@@ -45,7 +45,7 @@ const Login = () => {
         <div className="login-card">
           <form className="form-cont" onSubmit={handleLogin}>
             <h1>Bienvenido de vuelta</h1>
-            <p>Por favor inicie sesion en su cuenta</p>
+            <p>Por favor inicie sesión en su cuenta</p>
             <label >Nombre de usuario:</label>
             <input
               type="text"
@@ -65,7 +65,7 @@ const Login = () => {
             <button className="login-button">Ingresar</button>
             <div className="login-footer">
               <p>No tenes una cuenta?</p>
-              <Link to="/register">Registrate</Link>
+              <Link to="/register">Regístrate</Link>
             </div>
           </form>
         </div>

@@ -67,6 +67,10 @@ section {
   margin-top: 40px;
 }
 
+.search-input input:focus {
+  border: solid 2px #d0276d;
+}
+
 .pop-up {
   display: flex;
   justify-content: center;
@@ -153,8 +157,22 @@ section {
   padding: 50px;
 }
 
+.no-products-cont {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(15px);
+  background: rgba(255, 255, 255, 0.01);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 30px 25px;
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  color: white;
+  animation: aparecer 0.6s ease-out;
+}
+
 .no-products {
-  text-align: center;
+  margin: 0;
 }
 
 .product-card {

@@ -28,8 +28,7 @@ const AboutUs = () => {
               <h2>A quién está dirigido</h2>
               <p>
                 La aplicación está dirigida a estudiantes, desarrolladores y cualquier persona interesada en aprender
-                cómo se construye una tienda virtual desde cero, aplicando conceptos de frontend, manejo de usuarios
-                y seguridad básica mediante rutas privadas.
+                cómo se construye una tienda virtual desde cero. Los usuarios pueden explorar productos, crear una cuenta, iniciar sesión y gestionar su catálogo, disfrutando así de una experiencia e-commerce completa.
               </p>
             </div>
           </div>

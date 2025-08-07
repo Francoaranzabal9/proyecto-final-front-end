@@ -37,7 +37,6 @@ label {
   overflow: hidden;
 }
 
-
 .form-cont {
   backdrop-filter: blur(15px);
   background: rgba(255, 255, 255, 0.01);
