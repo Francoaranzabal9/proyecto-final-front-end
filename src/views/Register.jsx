@@ -32,8 +32,6 @@ const Register = () => {
       password: password
     }
 
-    const isRegister = await register(newUser)
-
     if (!username || !email || !password) {
       setError("Debes completar todos los campos.")
       return
@@ -43,6 +41,8 @@ const Register = () => {
       setLengthError("El nombre de usuario debe contener al menos 3 caracteres.")
       return
     }
+
+    const isRegister = await register(newUser)
 
     if (isRegister) {
       setUsername("")
