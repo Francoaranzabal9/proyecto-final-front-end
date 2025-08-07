@@ -48,7 +48,6 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  /* background: linear-gradient(to right, #f0ecf0 50%, #1f2a43 50%); */
   height: 60dvh;
   background-color: #1f2a43;
 }
@@ -216,5 +215,46 @@
 
   .tecnology p {
     font-size: 10px;
+  }
+}
+
+
+@media (max-width: 480px) {
+  .objective-card {
+    width: 100px;
+    padding: 8px;
+  }
+
+  .objective-card h2 {
+    font-size: 13px;
+    margin: 2px;
+  }
+
+  .objective-card p {
+    font-size: 8px;
+    margin: 0;
+  }
+
+  .objective-image img {
+    height: 100px;
+  }
+
+  .tec-text-cont h2 {
+    font-size: 13px;
+    margin: 2px;
+  }
+
+  .tec-text-cont p {
+    font-size: 8px;
+    margin: 0;
+  }
+
+  .tecnology img {
+    width: 20px;
+  }
+
+  .tecnology p {
+    font-size: 8px;
+    margin: 0
   }
 }
