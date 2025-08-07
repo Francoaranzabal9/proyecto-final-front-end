@@ -49,7 +49,7 @@ const Register = () => {
       setPassword("")
       setEmail("")
       navigate("/")
-      alert("El usuario ha sido regristrado con exito.");
+      alert("El usuario ha sido registrado con éxito.");
     }
   }
 
@@ -80,9 +80,9 @@ const Register = () => {
             {
               error && <p className="error">{error}</p>
             }
-            <button className="register-button">Registrarse</button>
+            <button className="register-button">Registrar</button>
             <div className="register-footer">
-              <p>Ya tenés una cuenta?</p>
+              <p>¿Ya tenés una cuenta?</p>
               <Link to="/Login">Inicia Sesión</Link>
             </div>
           </form>

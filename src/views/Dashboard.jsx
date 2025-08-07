@@ -31,12 +31,12 @@ const Dashboard = () => {
     }
 
     if (isNaN(price)) {
-      setError("El precio deben ser numeros.")
+      setError("El precio debe ser un número.")
       return
     }
 
     if (Number(price) <= 0) {
-      setError("El precio no puede ser menor o igual a 0.")
+      setError("El precio debe ser mayor que 0.")
     }
 
     const newProduct = {
@@ -108,16 +108,16 @@ const Dashboard = () => {
                 type="text"
                 onChange={(e) => setDescription(e.target.value)}
                 value={description}
-                placeholder="Ingrese la descrpicion del producto"
+                placeholder="Ingrese la descripción del producto"
               />
             </div>
             <div>
-              <label >Categoria:</label>
+              <label >Categoría:</label>
               <input
                 type="text"
                 onChange={(e) => setCategory(e.target.value)}
                 value={category}
-                placeholder="Ingrese la categoria del producto"
+                placeholder="Ingrese la categoría del producto"
               />
             </div>
             {
